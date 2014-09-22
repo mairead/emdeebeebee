@@ -1,0 +1,28 @@
+@media -sass-debug-info{filename{}line{font-family:\000031}}
+.footer {
+  background: #F16A3B;
+  color: #fff;
+  position: relative;
+}
+
+@media -sass-debug-info{filename{}line{font-family:\000036}}
+.spaceship {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+
+@media -sass-debug-info{filename{}line{font-family:\0000311}}
+.footer p {
+  padding: 10px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+@media (max-width: 767px) {
+@media -sass-debug-info{filename{}line{font-family:\0000319}}
+  .spaceship {
+    right: -5px;
+  }
+}

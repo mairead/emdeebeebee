@@ -24,6 +24,7 @@ body {
   padding: 0px;
 }
 
+
 a {
   color: $turquoise;
   font-weight: bold;
@@ -41,6 +42,7 @@ a {
 .viewport canvas{
   width: 1024px;
 }
+
 
 h1{
   font-size: 120px;
@@ -70,6 +72,7 @@ h1{
 @import 'partials/portfolio';
 @import 'partials/footer';
 @import 'partials/homepage';
+@import 'partials/cardboard'
 
 
 
