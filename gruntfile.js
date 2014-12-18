@@ -86,38 +86,6 @@ module.exports = function (grunt) {
 			}
 		},
 
-		// `optimizationLevel` is only applied to PNG files (not JPG)
-		imagemin: {
-			png: {
-				options: {
-					optimizationLevel: 7
-				},
-				files: [
-				{
-					expand: true,
-					cwd: './images/',
-					src: ['**/*.png'],
-					dest: './public/images/',
-					ext: '.png'
-				}
-				]
-			},
-			jpg: {
-				options: {
-					progressive: true
-				},
-				files: [
-				{
-					expand: true,
-					cwd: './images/',
-					src: ['**/*.jpg'],
-					dest: './public/images/',
-					ext: '.jpg'
-				}
-				]
-			}
-		},
-
 		// Run: `grunt watch` from command line for this section to take effect
 		watch: {
 			files: ['<%= jshint.files %>', '<%= sass.dev.src %>'],
@@ -130,7 +98,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('default', ['jshint', 'connect', 'sass:dev', 'uglify']);
 
 	// Release Task
-	grunt.registerTask('release', ['jshint', 'sass:dist', 'imagemin', 'uglify']);
+	grunt.registerTask('release', ['jshint', 'sass:dist', 'uglify']);
 
 
 };
