@@ -7,7 +7,7 @@ var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
 var golden_path = require('./routes/golden_path');
-var blog = require('./routes/blog');
+var articles = require('./routes/articles');
 var http = require('http');
 var path = require('path');
 
@@ -36,11 +36,11 @@ app.get('/slides', function(req, res){
   res.sendfile('./public/index.html');
 });
 
-app.get('/blog', blog.index);
-app.get('/blog/2012', blog.year12);
-app.get('/blog/2013', blog.year13);
-app.get('/blog/2014', blog.year14);
-app.get('/blog/2015', blog.year15);
+app.get('/articles', articles.index);
+app.get('/articles/2012', articles.year12);
+app.get('/articles/2013', articles.year13);
+app.get('/articles/2014', articles.year14);
+app.get('/articles/2015', articles.year15);
 
 app.get('/golden_path', golden_path.manifesto);
 app.get('/golden_path_revisited', golden_path.revisited);
