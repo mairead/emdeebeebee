@@ -42,7 +42,8 @@ app.get('/articles/2013', articles.year13);
 app.get('/articles/2014', articles.year14);
 app.get('/articles/2015', articles.year15);
 
-app.get('/golden_path', golden_path.manifesto);
+app.get('/golden_path', golden_path.index)
+app.get('/golden_path_manifesto', golden_path.manifesto);
 app.get('/golden_path_revisited', golden_path.revisited);
 
 http.createServer(app).listen(app.get('port'), function(){
