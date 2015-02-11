@@ -10,13 +10,6 @@ module.exports = function (grunt) {
 
 	// Project configuration.
 	grunt.initConfig({
-			
-		// Used to connect to a locally running web server
-		connect: {
-			test: {
-				port: 8000
-			}
-		},
 
 		jshint: {
 			files: ['Gruntfile.js', 'javascripts/**/*.js'],
@@ -95,7 +88,7 @@ module.exports = function (grunt) {
 	});
 
 	// Default Task
-	grunt.registerTask('default', ['jshint', 'connect', 'sass:dev', 'uglify']);
+	grunt.registerTask('default', ['jshint', 'sass:dev', 'uglify']);
 
 	// Release Task
 	grunt.registerTask('release', ['jshint', 'sass:dist', 'uglify']);

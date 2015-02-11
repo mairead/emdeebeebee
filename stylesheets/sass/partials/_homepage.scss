@@ -17,7 +17,11 @@
   border-radius: 30px;
   margin: 0 0 50px 0;
   border: 2px solid $grey;
-  padding: 20px 50px 50px 50px;
+  padding: 45px 50px 50px 50px;
+}
+
+.homepage h1, .homepage h2, .homepage h3{
+  margin-top: 10px;
 }
 
 .homepage h1{
@@ -78,11 +82,16 @@
   margin-bottom: 30px;
 }
 
-.homepage .navigation{
+.homepage .navigation, .homepage .subnav{
   text-align: center;
 }
 
-.homepage .navigation ul, .homepage .navigation li{
+.homepage .subnav{
+  margin-top: -40px;
+}
+
+.homepage .navigation ul, .homepage .navigation li,
+.homepage .subnav ul, .homepage .subnav li{
   display: inline-block;
   padding: 0;
   margin: 0;
@@ -92,20 +101,30 @@
   margin-left: -10px;
 }
 
-.homepage .navigation li{
+.homepage .navigation li, .homepage .subnav li{
   font-family: 'retro';
   font-size: 48px;
 }
 
-.homepage .navigation a{
+.homepage .navigation a, .homepage .subnav a{
   display: block; 
   padding: 20px 16px;
   text-transform: uppercase;
 }
-.homepage .navigation a:hover, .homepage .navigation a:focus, .homepage .navigation a:active{
+.homepage .subnav a{
+  color: $grey;
+}
+
+.homepage .navigation a:hover, .homepage .navigation a:focus, .homepage .navigation a:active,
+{
   color: $white;
   transition: all 0.5s;
 }
+
+.homepage .subnav a:hover, .homepage .subnav a:focus {
+  color: $green;
+}
+
 
 @media (max-width: 1023px) {
   .homepage{
