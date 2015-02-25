@@ -92,6 +92,7 @@
 
 .homepage .subnav{
   margin-top: -40px;
+  margin-bottom: 40px;
 }
 
 .homepage .navigation ul, .homepage .navigation li,
@@ -118,6 +119,9 @@
 .homepage .subnav a{
   color: $grey;
 }
+.homepage .subnav a.active{
+  color: $turquoise;
+}
 
 .homepage .navigation a:hover, .homepage .navigation a:focus, .homepage .navigation a:active,
 {
@@ -125,8 +129,12 @@
   transition: all 0.5s;
 }
 
+.homepage .navigation a.active{
+  color: $white;
+}
+
 .homepage .subnav a:hover, .homepage .subnav a:focus {
-  color: $green;
+  color: $turquoise;
 }
 
 

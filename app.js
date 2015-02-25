@@ -36,8 +36,8 @@ app.get('/slides', function(req, res){
   res.sendfile('./public/index.html');
 });
 
-app.get('/articles', articles.index);
-app.get('/articles/2012', articles.year11);
+app.get('/articles', articles.year15);
+app.get('/articles/2011', articles.year11);
 app.get('/articles/2012', articles.year12);
 app.get('/articles/2013', articles.year13);
 app.get('/articles/2014', articles.year14);

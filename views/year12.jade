@@ -9,25 +9,57 @@ block content
 					ul
 		
 						li
-							a.nav-link(href='/#portfolio') Portfolio
+							a.nav-link(href='/#work') Work
 						li
-							a.nav-link(href='/articles') Articles
+							a.nav-link.active(href='/articles') Articles
 						li
 							a.nav-link(href='/golden_path') Golden path
-			div.section.section-intro#intro
+			div.section.articles
 
 				nav.subnav
 					ul
 						li
-							a.sub-nav-link(href='/articles/2011') 2011
-						li
-							a.sub-nav-link(href='/articles/2012') 2012
-						li
-							a.sub-nav-link(href='/articles/2013') 2013
+							a.sub-nav-link(href='/articles/2015') 2015
 						li
 							a.sub-nav-link(href='/articles/2014') 2014
 						li
-							a.sub-nav-link(href='/articles/2015') 2015
+							a.sub-nav-link(href='/articles/2013') 2013
+						li
+							a.sub-nav-link.active(href='/articles/2012') 2012
+						li
+							a.sub-nav-link(href='/articles/2011') 2011
 
+				div.article-item
+					a.article-thumbnail-link(href="http://www.cam.ac.uk/") 
+						img.article-thumbnail(src="/images/thumb-camuni.png")
+						span.article-thumb-hover
+					h3.article-title 11 Nov 2012
+					p.article-description
+						a(href="/articles/creating-a-responsive-layout-website-part-1") Full Frontal 2012
+					
+				div.article-item
+					a.article-thumbnail-link(href="http://www.cam.ac.uk/") 
+						img.article-thumbnail(src="/images/thumb-camuni.png")
+						span.article-thumb-hover
+					h3.article-title 23 Oct 2012
+					p.article-description
+						a(href="/articles/creating-a-responsive-layout-website-part-1") The joy of Sass or "how I learned to stop worrying and love the preprocessor"
+					
+				div.article-item
+					a.article-thumbnail-link(href="http://www.cam.ac.uk/") 
+						img.article-thumbnail(src="/images/thumb-camuni.png")
+						span.article-thumb-hover
+					h3.article-title 05 Mar 2012
+					p.article-description
+						a(href="/articles/creating-a-responsive-layout-website-part-1") Creating a responsive layout website: Part II - Making images work
+					
+				div.article-item
+					a.article-thumbnail-link(href="http://www.cam.ac.uk/") 
+						img.article-thumbnail(src="/images/thumb-camuni.png")
+						span.article-thumb-hover
+					h3.article-title 20 Jan 2012
+					p.article-description
+						a(href="/articles/creating-a-responsive-layout-website-part-1") The incredible and amazing Arduino Vote-O-Matic
+					
 
-				p 2012
+					
