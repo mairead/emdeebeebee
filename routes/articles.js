@@ -1,7 +1,9 @@
 exports.index = function(req, res){
   res.render('articles', { title: 'Articles' });
 };
-
+exports.year11 = function(req, res){
+  res.render('year11', { title: 'Articles: 2011' });
+};
 exports.year12 = function(req, res){
   res.render('year12', { title: 'Articles: 2012' });
 };
