@@ -524,42 +524,13 @@ sub {
   clear: both;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\0000326}}
-.articles h3.article-title {
-  font-size: 35px;
-  line-height: 35px;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\0000327}}
+.portfolio-item p {
+  margin-bottom: 0;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\0000331}}
-.article-item {
-  min-height: 135px;
-  clear: both;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\0000336}}
-.article-item a {
-  color: #424242;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\0000340}}
-.article-item p.article-description {
-  font-size: 18px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\0000344}}
-.portfolio-item p, .article-item p {
-  margin-bottom: 0;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\0000348}}
-.article-item p.article-date {
-  margin-bottom: 0;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\0000355}}
-.portfolio-thumbnail, .article-thumbnail {
+.portfolio-thumbnail {
   margin: 0 30px 20px 0;
   border: 2px solid #424242;
   width: 150px;
@@ -568,15 +539,15 @@ sub {
   background: #ffffff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\0000364}}
-.portfolio-thumbnail-link, .article-thumbnail-link {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\0000340}}
+.portfolio-thumbnail-link {
   display: block;
   float: left;
   position: relative;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\0000370}}
-.portfolio-thumb-hover, .article-thumb-hover {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\0000346}}
+.portfolio-thumb-hover {
   position: absolute;
   top: 0;
   left: 0;
@@ -588,51 +559,49 @@ sub {
   background: #424242;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\0000383}}
-.article-thumbnail-link:hover .portfolio-thumb-hover, .article-thumbnail-link:hover .article-thumb-hover, .article-thumbnail-link:focus
-.portfolio-thumbnail-link:hover .portfolio-thumb-hover, .article-thumbnail-link:focus
-.portfolio-thumbnail-link:hover .article-thumb-hover, .portfolio-thumbnail-link:focus .portfolio-thumb-hover, .portfolio-thumbnail-link:focus .article-thumb-hover {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\0000359}}
+.portfolio-thumbnail-link:hover .portfolio-thumb-hover, .portfolio-thumbnail-link:focus .portfolio-thumb-hover {
   opacity: 0.4;
 }
 
 @media (max-width: 1023px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\0000389}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\0000365}}
   .tesselation {
     padding-bottom: 100px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\0000393}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\0000369}}
   .portfolio-item {
     padding-right: 0;
   }
 }
 @media (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\0000399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\0000375}}
   .tesselation {
     padding: 10px 10px 200px 10px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\00003103}}
-  .portfolio-item, .article-item {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\0000379}}
+  .portfolio-item {
     text-align: center;
     padding-right: 0;
     min-height: auto;
     padding-bottom: 20px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\00003110}}
-  .portfolio-item p, .article-item p {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\0000386}}
+  .portfolio-item p {
     margin-top: 5px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\00003113}}
-  .portfolio-thumbnail, .article-thumbnail {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\0000389}}
+  .portfolio-thumbnail {
     float: none;
     margin: 0;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\00003117}}
-  .portfolio-thumbnail-link, .article-thumbnail-link {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_portfolio\.scss}line{font-family:\0000393}}
+  .portfolio-thumbnail-link {
     float: none;
     width: 150px;
     margin: 0 auto;
@@ -972,5 +941,107 @@ sub {
   border: 1px solid blue;
 }
 */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_articles\.scss}line{font-family:\000031}}
+.articles h1 {
+  line-height: 70px;
+  text-align: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_articles\.scss}line{font-family:\000036}}
+.articles h3.article-title {
+  font-size: 35px;
+  line-height: 35px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_articles\.scss}line{font-family:\0000310}}
+.article-item {
+  min-height: 135px;
+  clear: both;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_articles\.scss}line{font-family:\0000315}}
+.article-item a {
+  color: #424242;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_articles\.scss}line{font-family:\0000319}}
+.article-item p.article-description {
+  font-size: 18px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_articles\.scss}line{font-family:\0000324}}
+.article-item p {
+  margin-bottom: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_articles\.scss}line{font-family:\0000328}}
+.article-item p.article-date {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_articles\.scss}line{font-family:\0000334}}
+.article-thumbnail {
+  margin: 0 30px 20px 0;
+  border: 2px solid #424242;
+  width: 150px;
+  height: 150px;
+  border-radius: 30px;
+  background: #ffffff;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_articles\.scss}line{font-family:\0000343}}
+.article-thumbnail-link {
+  display: block;
+  float: left;
+  position: relative;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_articles\.scss}line{font-family:\0000349}}
+.article-thumb-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.5s;
+  opacity: 0;
+  width: 154px;
+  height: 154px;
+  border-radius: 30px;
+  background: #424242;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_articles\.scss}line{font-family:\0000361}}
+.article-thumbnail-link:hover .article-thumb-hover, .article-thumbnail-link:focus .article-thumb-hover {
+  opacity: 0.4;
+}
+
+@media (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_articles\.scss}line{font-family:\0000367}}
+  .article-item {
+    text-align: center;
+    padding-right: 0;
+    min-height: auto;
+    padding-bottom: 20px;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_articles\.scss}line{font-family:\0000373}}
+  .article-item p {
+    margin-top: 5px;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_articles\.scss}line{font-family:\0000376}}
+  .article-thumbnail {
+    float: none;
+    margin: 0;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_articles\.scss}line{font-family:\0000380}}
+  .article-thumbnail-link {
+    float: none;
+    width: 150px;
+    margin: 0 auto;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

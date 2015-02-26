@@ -1,0 +1,85 @@
+.articles h1{
+	line-height: 70px;
+	text-align: center;
+}
+
+.articles h3.article-title{
+  font-size: 35px;
+  line-height: 35px;
+}
+.article-item{
+  min-height: 135px;
+  clear: both;
+}
+
+.article-item a{
+  color: $grey;
+}
+
+.article-item p.article-description{
+  font-size: 18px;
+}
+
+
+.article-item p{
+  margin-bottom: 0;
+}
+
+.article-item p.article-date{
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.article-thumbnail{
+  margin: 0 30px 20px 0;
+  border: 2px solid $grey;
+  width: 150px;
+  height: 150px;
+  border-radius: 30px;
+  background: $white;
+}
+
+.article-thumbnail-link{
+  display: block;
+  float: left;
+  position: relative;
+}
+
+.article-thumb-hover{
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.5s;
+  opacity: 0;
+  width: 154px;
+  height: 154px;
+  border-radius: 30px;
+  background: $grey;
+}
+.article-thumbnail-link:hover, .article-thumbnail-link:focus{
+.article-thumb-hover{
+    opacity: 0.4;
+  }
+}
+
+@media (max-width: 767px) {
+  .article-item{
+    text-align: center;
+    padding-right: 0;
+    min-height: auto;
+    padding-bottom: 20px;
+  }
+  .article-item p{
+    margin-top: 5px;
+  }
+  .article-thumbnail{
+    float: none;
+    margin: 0;
+  }
+  .article-thumbnail-link{
+    float: none;
+    width: 150px;
+    margin: 0 auto;
+  }
+}

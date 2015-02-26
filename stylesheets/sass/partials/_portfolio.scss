@@ -23,36 +23,12 @@
   padding-right: 200px;
   clear: both;
 }
-.articles h3.article-title{
-  // color: $grey;
-  font-size: 35px;
-  line-height: 35px;
-}
-.article-item{
-  min-height: 135px;
-  clear: both;
-}
 
-.article-item a{
-  color: $grey;
-}
-
-.article-item p.article-description{
-  font-size: 18px;
-}
-
-.portfolio-item p, .article-item p{
+.portfolio-item p{
   margin-bottom: 0;
 }
 
-.article-item p.article-date{
-  margin-bottom: 0;
-  // font-family:'retro';
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.portfolio-thumbnail, .article-thumbnail{
+.portfolio-thumbnail{
   margin: 0 30px 20px 0;
   border: 2px solid $grey;
   width: 150px;
@@ -61,13 +37,13 @@
   background: $white;
 }
 
-.portfolio-thumbnail-link, .article-thumbnail-link{
+.portfolio-thumbnail-link{
   display: block;
   float: left;
   position: relative;
 }
 
-.portfolio-thumb-hover, .article-thumb-hover{
+.portfolio-thumb-hover{
   position: absolute;
   top: 0;
   left: 0;
@@ -78,9 +54,9 @@
   border-radius: 30px;
   background: $grey;
 }
-.article-thumbnail-link:hover, .article-thumbnail-link:focus
+
 .portfolio-thumbnail-link:hover, .portfolio-thumbnail-link:focus{
-  .portfolio-thumb-hover, .article-thumb-hover{
+  .portfolio-thumb-hover{
     opacity: 0.4;
   }
 }
@@ -100,21 +76,21 @@
     padding: 10px 10px 200px 10px ;
   }
 
-  .portfolio-item,.article-item{
+  .portfolio-item{
     text-align: center;
     padding-right: 0;
     min-height: auto;
     padding-bottom: 20px;
   }
 
-  .portfolio-item p, .article-item p{
+  .portfolio-item p{
     margin-top: 5px;
   }
-  .portfolio-thumbnail, .article-thumbnail{
+  .portfolio-thumbnail{
     float: none;
     margin: 0;
   }
-  .portfolio-thumbnail-link, .article-thumbnail-link{
+  .portfolio-thumbnail-link{
     float: none;
     width: 150px;
     margin: 0 auto;
