@@ -31,6 +31,47 @@ block content
 		
 				h1 The accuracy of Javascript timing
 
+				p.article-date 23 Sep 2011
+
+
+				h2 Limitations of technology
+
+				p When discussing the technical design of this application the major issue that arose, was the effectiveness of measuring time using web technologies. You have to rely on a combination of javascript timing mechanisms and the value of the system clock retrieved via javascript.
+
+				p The Windows operating system itself can have a measure of granularity between 10 and 15 milliseconds, which introduces the first level of inaccuracy any time the system clock time is requested. We can never retrieve exact millisecond accuracy from a computer's operating system across a range of browsers/platforms.
+
+				p When retrieving the value of the system clock via javascript, the runtime makes a request to the browser, which then hands this request on to the system clock of the machine. Some browsers will only update their internal getTime representations every 15 milliseconds. Requested time will be rounded down to the last time the timer was updated (which, on average, will have been about 7.5 milliseconds ago). It is possible requests made in less than 15 milliseconds will be returned as 0 milliseconds. More information can be found on John Resig's article "The accuracy of javascript time".
+
+				p The salient point to make, in regards to capturing a response from the user or making a request to the system clock, is that there is a minimum of 30ms tolerance required.
+
+				h2 Application performance
+
+				p There is a level of delay which can be introduced in the scheduling of javascript processes if the CPU is either overloaded or hijacked by a process with higher priority. In addition to this, different browsers have a variation in the speed of their internal javascript engines, which will affect the processing speed of the application.
+
+				p To investigate the capability of javascript timing we built a test page that illustrates javascript performance. We can record the timing of javascript functions as they are performed using a timing library created by Remy Sharp. However this could be limited to the internal timings of the browser and whether it can report back findings of less than 15ms. In some instances we think these will be rounded down to zero and are only of minimal help in calculating application performance.
+
+				p The performance test uses the "time.js" library to report to the users machine how long a javascript function takes. In this test file we record the system time, cycle through several images by swapping a class name on an image sprite, record a keyPress event, write to the DOM using innerHTML and iterate through a block of elements inserted into the page.
+
+				h2 Measuring accuracy
+
+				p Because we know that javascript cannot function in real time, our solution is to test the accuracy of the application during runtime and report back the level of perceived inaccuracy based on polling the system clock at regular intervals.			 
+
+				p The nature of web technology is that you cannot determine the speed or specification of the host device. Rather than define a minimum specification we have suggested setting a maximum tolerance level for every time dependent function. The tolerance is a value of how inaccurate the system can be before it is considered as failing. The tolerance value allows you to halt the application and provide useful error messaging if the host machine falls below desirable performance levels and exceeds the tolerance set.
+
+				p We have several methods of capturing time accuracy within the javascript application. The most basic involves capturing the time before a function is performed, creating a javascript timer and then capturing the time after the function has completed. By comparing the difference we can see if our internal javascript time has become inaccurate whilst the function is being performed. We also implemented two types of system clock in our performance test page using polling and self regulating timing to show the relative inaccuracy of timing across different devices. 
+
+				p During looping functions it is possible to improve the accuracy of the internal javascript timer function by using a self regulating timer. This technique determines the level of inaccuracy of the internal timer each time the loop runs and then uses that variance to adjust the speed setting of the timer allowing for a more consistent average speed.
+
+				p Our accuracy testing is limited to the frequency with which we can poll the system clock of the machine. Polling the system clock is a relatively expensive function and performing this operation too frequently will cause performance issues detrimental to the application. When building the tests we intend to optimise this polling frequency to ensure useful data on the time variance of each iteration in a looping mechanism without introducing a performance impact on the time the test takes to complete.
+
+				h2 Testing a "real world" implementation
+
+				p We then built a second test page to mimic the functionality of our looping test application to see the variance in timing over an iterated loop of timed activity.
+
+				p The test application starts by getting the current system time. It then runs through a fixed number of trials. During each iteration the showImage function determines which classname to send and the duration it should be visible for. This is passed into the changeImage function which assigns the relevant classname to a scoped variable and creates a setTimeout function for the correct duration. The imageRemoved function called by the setTimeout changes the image by setting a classname, retrieves the system time and calculates the time that the current iteration has taken to perform based on the last recorded timestamp.
+
+				p At this point the application can introduce a tolerance setting and report back whether or not the current loop has performed within an acceptable time variance. Control is then returned back to requestNextTask to determine if another loop should be performed.
+
 				p.sub 
 					|This article was originally published on the 
 					a(href='http://www.headlondon.com' target="_blank") Head London 

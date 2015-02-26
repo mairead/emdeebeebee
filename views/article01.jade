@@ -44,6 +44,21 @@ block content
 				p We created a Rails helper gem, responsive_image_tag, to insert the necessary markup into the page:
 
 		
+				p The helper places the default image inside a &lt;noscript&gt; tag, which is then deleted by the JavaScript library. The image attributes such as full size, mobile size and alt text are also stored as HTML5 data attributes on the &lt;noscript&gt; tag so they are available in the DOM for the JavaScript to access.
+
+				p The library relies on the premise that child elements of the &lt;noscript&gt; tag are not added to the DOM, so deleting the &lt;noscript&gt; prevents an HTTP request being made to the server. This way only the image being requested by the dynamically inserted image tag is making a request.
+
+				p To insert the dynamically created image element into the page you need a parent element in the DOM to append to. The Rails helper also creates a &lt;span&gt; tag with a class of 'img-placeholder' to house the new image.
+
+				p When the DOM is ready the JavaScript object responsiveImageTag detects all &lt;noscript&gt; elements on the page with a class of 'responsivize'.
+
+				p It retrieves the HTML5 data attributes ("data-mobilesrc", "data-fullsrc", and "data-alttext") and then creates an image tag with the correct source depending on the available screen width of the users device.
+
+				p The responsive-image-tag javascript inserts the new element into the page and the &lt;noscript&gt; tags are then hidden from view.
+
+				p You can check out our github repo. It's not a perfect solution. It has the elegance of a wading hippo. It adds a lot of extra markup into your page for each image tag you want to make responsive and it's causing a page reflow as your page is loading, which could potentially impact performance if over-used.
+
+				p Ideally we need an addition to the HTML5 specification to allow some kind of device recognition or feature detection for device specific assets. I believe there are several aspects of developing for mobile or developing responsively that we don't have real standard support for right now and as a development community we need to be championing the need for these and getting them written into the spec now.
 
 				p.sub 
 					|This article was originally published on the 
