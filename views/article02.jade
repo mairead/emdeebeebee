@@ -1,0 +1,37 @@
+extends portfolio-layout
+
+block content
+	div.wrapper.homepage
+		div.tesselation
+			div.header
+				a.logo(href="/") emdeebeebee.com
+			nav.navigation
+					ul
+		
+						li
+							a.nav-link(href='/#work') Work
+						li
+							a.nav-link.active(href='/articles') Articles
+						li
+							a.nav-link(href='/golden_path') Golden path
+			div.section.articles
+
+				nav.subnav
+					ul
+						li
+							a.sub-nav-link(href='/articles/2015') 2015
+						li
+							a.sub-nav-link(href='/articles/2014') 2014
+						li
+							a.sub-nav-link(href='/articles/2013') 2013
+						li
+							a.sub-nav-link(href='/articles/2012') 2012
+						li
+							a.sub-nav-link(href='/articles/2011') 2011
+		
+
+
+				p.sub 
+					|This article was originally published on the 
+					a(href='http://www.headlondon.com') Head London 
+					| website
