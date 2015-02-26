@@ -31,6 +31,20 @@ block content
 
 				h1 Creating responsive images using the noscript tag
 		
+				p.article-date 18 Aug 2011
+
+				p When building responsive websites, you immediately run into the problem of trying to implement responsive images which would be sized correctly depending on the user's device. Either you want to hide images from mobile users or give them an optimised version. The problem centers on the page loading anything referenced in the HTML even if it's hidden by CSS in your media queries. This can lead to your mobile users getting a big hit from content they aren't even using.
+
+				p This problem can't be handled entirely on the server side. You have to make contact with the user's device before you can determine how much screen width is available. Therefore the solution has to involve JavaScript. The feature detection has to intercept the server request before the entire DOM has loaded into place, otherwise the page could make a request for the wrong image. You also have to be able to serve an image to users who have JavaScript switched off, so a full JavaScript solution is not acceptable.
+
+				p We came across a couple of existing libraries. You can read our blog post on implementing the Filament Group solution. We later found another solution, which suggests using PHP to serve your images. Browser support was an issue for us with the Filament Group solution so we started experimenting with our own ideas. We came up with the idea of adding an image into a &lt;noscript&gt; tag and then enhancing the site for JavaScript users by removing the &lt;noscript&gt; tag and creating a new image element with a dynamic source attribute.
+
+				p Using the Webkit developer tools, HTTPWatch for Internet explorer and HTTPfox for Firefox we were surprised to discover that removing the element with JavaScript prevented the request being made to the server. After a quick Google we discovered that it works because children of the &lt;noscript&gt; tag are not added to the DOM. This appears to work in all the browsers we've tested, even IE6, with the single exception of Opera's Dragonfly, which crashed repeatedly when we tried to test.
+
+				p We created a Rails helper gem, responsive_image_tag, to insert the necessary markup into the page:
+
+		
+
 				p.sub 
 					|This article was originally published on the 
 					a(href='http://www.headlondon.com' target="_blank") Head London 
