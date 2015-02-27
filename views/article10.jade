@@ -30,6 +30,57 @@ block content
 							a.sub-nav-link(href='/articles/2011') 2011
 		
 				h1 Full Frontal 2012
+
+				p.article-date 11 Nov 2012
+
+				p So I'm back from another year's Full Frontal conference. Once again I think they hit the nail on the head in terms of the most relevant subject matter for front end developers. This year's conference covered the browser landscape, testing, tooling and they kicked off with the debate around native versus web application. It's not a new topic, this subject has been raging since the first iphone hit the shelves but its still a cause for concern.
+
+				p James Pearce started with 'How I stopped worrying and learned to love the &lt;body/&gt;', a fairly admanant exhortation that we should be creating application software and that our current technology stack isn't sufficient to meet the demand for increasingly complex web applications. He decried the need for any HTML markup at all, recommending Javascript or native compiled code as the best solution. Objective C anyone? 
+
+				p John Allsopp countered with 'Is HTML relevant in the era of web apps', an equally impassioned rejoinder on the importance of sticking to the pure web technology stack of HTML, CSS and Javascript. As we move into a future of more sophisticated web applications we have to recognise that our software will require greater longevity, which will impact the decisions we are making in regard to support, maintenance and stability of the code base over time. Retaining simplicity in your architecture is key to success.
+
+				p I can see both sides to this argument, ultimately it depends on what you feel is the best tool for the job. My only concern is where the accessibility comes in to this. We're struggling with the ethics of this internally at Head right now. Are we happy to abandon non-Javascript users completely? And as an industry have we just stopped caring about accessibility? Will the Javascript framework you choose be ARIA ready and is ARIA even going to solve accessibility issues for you? No comments or questions were raised, which felt like an elephant in the room to me. I'd love to hear more from an accessibility expert on how native apps perform compared with web technologies. How do we proceed from here?
+
+				p 
+					|The debate was followed closely by Andrew Betts' 'Offline rules' describing his work on the 
+					|<a href="http://labs.ft.com/" target="_blank">FT labs </a>
+					| offline applications. Andrew is down at the rough end of the coal face and it ain't pretty. He gave us a brilliant analogy of offline web application tools as a disfunctional family. They don't work as well as you want them to and they certainly don't co-operate with each other, approach with caution. Some of the workarounds Andrew's team have come up with, i.e. converting all the content from UTF-16 to ascii just to squeeze more content into local storage makes me shudder. It really shouldn't be this difficult.
+
+				p 
+					|His closing message was optimisic though. As a member of the 
+					|<a href="https://www.w3.org/community/fixing-appcache/" target="_blank">W3C community group for the App cache </a>
+					| he's working to make the technologies we need to achieve these tasks better. It's important to remember that necessity is the mother of invention and without these kinds of hacks we won't get progress from browser vendors to implement the tools we need to work more efficiently. Andrew feels we need to push the web platform forward rather than abandoning it for other technologies and like, Tim Berners Lee, I am largely in favour of this point of view.
+
+				p 
+					|<a href="https://speakerdeck.com/rmurphey/writing-testable-javascript" target="_blank">Rebecca Murphy's 'Writing testable Javascript'</a> 
+					| was the talk I most anticipated. She ran through the reasons for using TDD, which are many, but also delved deeper into what that means for your architecture and what patterns you should be using to enable the testing of functions and their returned values. I did have a couple of lightbulb moments during Rebecca's talk: the importance of constructors for creating an object that can be instantiated in tests and in the code, and not testing too much (i.e. if your library is performing its event binding).
+
+				p It was reassuring to hear others are still struggling to incorporate testing into their Javascript workflow. To me, this is the greatest challenge to our industry. It's far more important to know how to create sophisticated robust software, than whether or not you choose a single page application framework or a hybrid web application stack. This echoed John's earlier views about retaining and improving our existing technology and striving for simplicity in our code.
+
+				p 
+					|I found 
+					|<a href="https://speakerdeck.com/anna/exploring-the-game-console-browser-landscape" target="_blank">Anna Debenham's talk on 'Exploring the game console browser landscape'</a>
+					|fascinating and daunting in equal measure. Her research into games console browsers was amazingly in-depth. We've already made a foray into Kinect development at Head so the potential for incorporating other consoles or browsing interactions into the web is an exciting area for us. The flipside is you're dealing with a much larger landscape of browsers, screen sizes, Javascript and CSS capabilities, a clear argument for properly fluid responsive design. Future generations of handheld consoles and smartphone console hybrids have modern browsers as standard and the youth market is far more likely to be using them. This is an area we should be paying attention to.
+
+				p The other main takeaway from this talk was browsing on your TV is far closer to a mobile experience where you want a simplified enlarged UI than desktop, particularly if you're using awkward controls like a Wii remote or smartglass via your mobile so your media queries will need to reflect that. The tricky part here is detecting whether your user is actually using their TV and not just a wide screen monitor. 
+
+				p 
+					|The most important message I took from the keynote speaker, Chris Wilson, was that the web is a platform where anyone can be an author. I think this is key to understanding the success of the internet as a communication tool and again this struck a chord in me relating to John Allsopp's talk earlier in the day about keeping the tools we use to create the internet accessible to all. We need to preserve the relative simplicity of web authoring for beginners if we want to democratise the creation of content. Chris ended the day by asking us to make magic happen. I think both 
+					|<a href="https://speakerdeck.com/paulkinlan/building-web-apps-of-the-future-tomorrow-today-and-yesterday" target="_blank">Paul Kinlan's talk: 'Building web apps of the future' </a>
+					|and Steve Witten's 'Making things with math' can be nominated for this category.
+
+				p Paul showed us an amazing array of new features in Chrome from the HTML5 and CSS3 specs that are just coming in. To be honest its probably not going to be production ready, in some cases you wouldn't even be able to provide a fall back so I filed most of it under shiny toys it would be fun to use if you're part of the Google Dev relations team. Still great to see though and when he showed us the CSS3 GL shaders transitions that was totally mind blowing.
+
+				p 
+					|My favourite talk of the day goes to 
+					|<a href="http://acko.net/" target="_blank">Steve Witten.</a> 
+					|I was worried for this guy because he had a late slot in the day, with a post lunch audience. I thought he was going to struggle with such a technical subject but I couldn't have been more wrong. He had some amazing 3D visualisations of mathematical algorithms and how they can be combined with canvas, using 
+					|<a href="http://mrdoob.github.io/three.js/" target="_blank">three.js</a>
+					|and his own 
+					|<a href="https://github.com/unconed/MathBox.js" target="_blank">MathBox library</a>
+					|to make 3D animations. He did a superb job of translating complex matrix maths like the construction of cubic bezier curves into laymans terms. He'd clearly lavished a lot of love and attention over his slides with multiple videos of 3D animations and they were a joy to behold. Lovely to see what is possible with the most basic of tools, a little maths, a little Javascript and a web browser.
+
+				p So all in all, another great year, lots to think about, lots to inspire, lots of new things to look forward to in the coming year so thanks again to the team at Full Frontal for another superb job. 
 		
 				p.sub 
 					|This article was originally published on the 

@@ -31,6 +31,65 @@ block content
 		
 				h1 The joy of Sass or "how I learned to stop worrying and love the preprocessor"
 
+				p.article-date 23 Oct 2012
+
+				p So I realise I'm a bit late to the party and preprocessors are nothing new but its taken me a while to find a project that I could experiment on and now I've got to grips with it I'd thought I'd share my findings with others. Like many, I think I've been put off for a long time because of the learning curve required to get the automated compiling underway. As well as the effort involved in learning a new syntax I was loathe to start using something that was going to slow my development processes down.
+
+				p 
+					|First up, I chose 
+					|<a href="http://sass-lang.com/" target="_blank">Sass</a>
+					|over 
+					|<a href="http://lesscss.org/" target="_blank">Less 
+					|because I liked the look of 
+					|<a href="http://compass-style.org/" target="_blank">Compass.</a> 
+					| Having prewritten mixins is a massive leg up and for me keeping your code DRY is the single biggest reason for expending the extra effort it takes to learn to use a preprocessor. Plus you don't ever have to write multiple CSS3 vendor prefixes ever again and the documentation on Compass is awesome.
+
+				p Luckily I happen to work quite closely with some Ruby developers so I had a hand getting the Compass gem up and running and working inside a Padrino application server but I can see how if you were purely front end and you had no experience of using the terminal or running your own application server that this would be a real struggle to get your head around. I see so many comments on blogs and tech articles from people asking why other developers aren't using preprocessors yet. I think this is the reason. For many front end developers this is not run of the mill stuff, this is actually quite far outside their comfort zone. It might seem obvious to those who can, but to those who can't this is a big step.
+
+				p We were working on a site that was in a bit of a mess. It started life as a Twitter Bootstrap application so the framework code was pretty hefty. Bootstrap is a bit of a pain to re-skin, so you're left with the choice of sifting through over 2000 lines of code to try to customise it, or repeating massive blocks of Bootstrap selectors in your own code to overwrite them.
+
+				p The rest of the CSS had been put together quickly without any real concern for the project structure. Really we'd just been throwing code at it to see what sticks. It got bandied around several developers in a short space of time so it had no overarching conventions or direction and the resulting CSS was a mis-match of styles. Eventually we realised refactoring was pretty essential for the health of the application so we nominated it as a candidate for the Sass treatment.
+
+				p Ideally I think you would want to start with your preprocessor in place when you create your project. Shoe horning it into an existing Padrino app was a little hairy. We had to generate a fresh Padrino app with Sass specified in the generator and then try to sift out the bits that were missing from our app like the compass.rb in the lib folder structure and the compass initializer in the app.rb file. Also annoyingly we discovered the Bootstrap Sass port gem we are using has a differently named Image folder and this doesn't appear to be customisable.
+
+				p On the plus side migrating the prewritten CSS into Sass meant it was easy to pick out patterns of repetition and refactor them down into re-usable components. As a way to learn Sass and how to use it to its best advantage this was an interesting exercise. I had a lot of questions about the best approach to certain problems and although the Compass documentation is awesome I think the communities for both Less and Sass are still relatively small and there's not a huge amount of advice on the best way to go about things so I thought I'd share some tips and tricks that I learnt from implementing the refactoring.
+
+				h2 Variables and mixins
+
+				p I started with the obvious and picked out all the colours, corner radius and typography selectors that were repeated. Then I created a mixin for the basic component panels and drop shadow treatment. Don't forget mixins are a gift that keeps on giving, as long as you're smart about the way you write new ones, then theoretically the code you write from scratch should be reduce exponentially over time. We'll be creating a library of all our Sass mixins and placeholders at the end of this project and migrating that straight into the next project.
+
+				h2 Extending heading selectors
+
+				p Currently we are using extended selectors to copy a typography treatment onto certain elements but I still have an unanswered question about heading styles and how best to apply them. I think this is an old problem that Sass isn't necessarily going to solve. A component could have a heading, but depending on where the component appears in the page its impossible to determine whether the heading should be an h2, h3 etc. Do you either put a class on the h tag, frustrating because its effectively a non-semantic class, or specify a Sass selector that extends the heading style onto any heading in that panel, which will scale poorly. What happens if in the future the component requires two types of heading style? Ideally I would like to remove the â€œspecial-headingâ€ classname from the H tags but I'm not sure of the best way to target the headings without it.
+
+				h2 OOCSS and Sass
+
+				p The second conflict I was having was in marrying up what I understood from the OOCSS team and the principles of Sass. They seemed to be at odds with each other and I was struggling to work out the best way forward. OOCSS is telling you to reduce specificity wars by adding classnames to finely grained elements. However Sass is telling you to extract out any non-semantic classnames by letting you nest your component structure in the pre-compiled code. I came across this article on using OOCSS with sass from Ian Storm Taylor  and I was actually hugely relieved to find someone else was thinking along the same lines. Sometimes when you're learning a new skill it can feel like you're groping around in the dark looking for the answers and I definitely had a lightbulb moment when reading Ian's article.
+
+				h2 Partials
+
+				p Moving components or page specific selectors into their own partial makes it a lot easier to find styles. This is definitely a time saver. Any front end developer knows the pain of scrolling through a 2000 line file, even if you've got the line number from firebug its still a pain when a file gets too big. Splitting them into partials, preferably into small enough chunks that you can read it all in one go is a bonus. You need to be smart with your partial naming, if you're working with the compiled CSS in firebug the line numbers aren't going to help you any more. Comment your partials properly too, in the eventuality that you don't remember which partial you are looking for you'll have to trawl through the compiled CSS so a pointer to the partial you are looking for is going to help.
+
+				h2 Controlling IE styles and Media queries through Mixins
+
+				p Where to place my media query selectors was causing me some confusion. If I was writing by hand I'd put them all down into the same block, normally at the bottom of my CSS so I can use the cascade above to handle anything generic. However Sass encourages you to nest everything related together and that ends up with repetition of the same MQ breakpoints over and over. Whilst googling this I came across a trick for writing Media query selectors inside Sass from the brilliant Jake Archibald. 
+
+				p Its worth noting, when using this technique, MQs are repeated in your compiled CSS but I believe the Sass team are working on a way to extract them into grouped blocks in a further release so hold on to you hats. The added bonus of this technique is he also gives you a way for creating a mixin to extract out IE only styles at the same time to generate two separate tailored stylesheets and that allows you to handle the fallback for the non-responsive browsers and any other IE specific patching up you need to do. Genius.
+
+				h2 Creating template variants
+
+				p Bootstrap gave us a pretty good fluid grid but you can take this one step further by declaring container names that are made up of a certain permutation of grid columns to create template structures. The benefit here is in removing non-semantic grid structure classnames but also if you name your containers in a generic way this is the kind of structure you can take out of your existing project and re-use again. A massive time saver because lets be honest, its not like you're not going to need that 3 column page layout with a header and a left nav again. Any time you create a new template variant add it to your component library, over time you'll have every permutation you could possibly want. 
+
+				h2 Using maths to create layout
+
+				p I use separate containers for my grid structure and my padding structure to remove the box model conflict of setting padding on items with specified width. At the start of the project I was adding two variants of this padding container to my components. One held a wide padding for main page elements, the other held a thinner padding treatment for internal objects like headings or list items. You can set up your baseline padding width as a numeric variable and then use maths to create half or quarter values. As a rule of thumb guttering should be based on multiples of the main font size. I'm using mutiples of 12px for my padding containers.  Using the maths functions to create numeric values which are multiples or divisible by this number is the best way to keep a visual rhythm to the site.
+
+				h2 Placeholders
+
+				p These are my favourite feature. Unlike an extended selector from an existing object, a placeholder is really just a group of styles that belong together. There are so many classes littering my markup that can be refactored out with placeholders. The magnificent clearfix is still my favourite way of clearing floats but it doesn't really need to be there in the markup. You can add the clearfix styles to a semantic container name by extending a placeholder and then you never need to see it in the markup again. I also use an unstyled-list class to remove styling that I tend to use quite liberally, again this is just a handful of repeated styles for addition when necessary. The typographic styles re-used across multiple containers can be made as placeholders as can the template variant structure. Placeholders are great for any kind of generic object and are therefore perfect candidates for re-use across projects so rip them out and put them in your library too.
+
+				p Finally here is a really great slide deck from SXSW on preprocessor best practices. It does a pretty comprehensive comparison of Less versus Sass and gives you a good run down of the features available and the best way to structure your code base when using a preprocessor. Happy preprocessing and I'd like to iterate Ian's request too. I'd love to hear your Sass patterns and share what you've learnt from using it in the wild. 
+
 				p.sub 
 					|This article was originally published on the 
 					a(href='http://www.headlondon.com' target="_blank") Head London 

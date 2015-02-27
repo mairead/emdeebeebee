@@ -92,7 +92,7 @@
 
 .homepage .subnav{
   margin-top: -40px;
-  margin-bottom: 40px;
+  // margin-bottom: 40px;
 }
 
 .homepage .navigation ul, .homepage .navigation li,
@@ -139,6 +139,9 @@
 
 
 @media (max-width: 1023px) {
+  .homepage .subnav{
+    margin-top: 0;
+  }
   .homepage{
     width: 100%;
   }

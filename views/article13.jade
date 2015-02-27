@@ -31,6 +31,84 @@ block content
 		
 				h1 Kinect pain - Reinstalling Libfreenect Kinect drivers on Mountain Lion upgrade
 
+				p.article-date 07 Jul 2013
+
+				p Having reformatted a dying macbook and upgraded to Mountain Lion I had to go back through all my custom packages and reinstall several including the libfreenect library to get my Kinect project going again. Below is detailed the several painful steps
+
+				p 
+					|The 
+					|<a href="http://openkinect.org/wiki/Main_Page" target="_blank">OpenKinect project</a>
+					| that produce the libfreenect library have 
+					|<a href="http://openkinect.org/wiki/Getting_Started#Manual_Build_under_OSX" target="_blank">extremely detailed instructions</a>
+					| of how to install. I was originally trying to get these to work but I failed repeatedly.
+
+				p 
+					|I started out with a devil may care attitude, thinking "I've done this before I can do it again". I switched to using 
+					|<a href="http://brew.sh/" target="_blank">Homebrew</a>
+					| instead of 
+					|<a href="http://www.macports.org/" target="_blank">Macports</a> 
+					|when I upgraded (mostly because I listened to people I didn't know on the internet telling me it was better. Make of that what you will). Because I wasn't using Macports I started following the build from scratch instructions from Open Kinect. 
+
+				p I ran the cloned installs for libusb and libtools but then discovered I couldn't run the patch as stated in the steps.
+
+				p all hunks failed:
+
+				p I tried installing the libraries from Homebrew and was getting this error
+
+				p I assumed at this point that I was clearly doing something wrong. I went back to check my old article and re-read the original instructions I'd been following and decided that seeing as last time I'd tried it with Macports, then I should go with what works. I re-installed Macports (over the top of Homebrew, possibly a bad idea) and tried to run the following
+
+				p and got the following error
+
+				p This is the first big gotcha I encountered this time round. Libusb-devel is deprecated. It doesn't exist any more. As far as I can tell any changes it had, have been rolled into libusb. When I was installing it last time the libusb-devel was a mandatory step, if you tried working with libusb it wouldn't work. This is no longer the case.
+
+				p So eventually I worked out I could install libusb without the -devel suffix and then I tried to run the cmake commands
+
+				p I got as far as configuring the URL to the include path but then I get the following error
+
+				p I reread my original post and saw I'd been editing the make file to point to opt. I spent a long time agonising over why this would not work if I changed it to opt/local as suggested, whether I need to change both links, where these files should reside in my file system, stuck again, in cmake pain, how I loathe thee. Eventually I realised I didn't need to change the paths. My paths were all pointing to usr and that it would work fine left as it was.
+
+				p However libfreenect still wouldn't compile so I went back to the start of the instructions and saw the Homebrew installation process looked way simpler.
+
+				p I got as far as trying to install and got this error:
+
+				p I ran brew doctor and it told me to uninstall my Macports, fair enough I think I knew that was coming, I did that, then tried to build again and failed, so I ran brew doctor again, and it told me to consider amending my PATH so that /usr/local/bin occurs before /usr/bin in my PATH.
+
+				p 
+					|I googled  
+					|<a href="http://stackoverflow.com/questions/10343834/homebrew-wants-me-to-amend-my-path-no-clue-how" target="_blank">how to change my path data</a>
+					| and edited it with sudo vi /etc/paths and even changed terminal session just to make sure those changes were being picked up but I still couldn't get it to work and brew doctor was now just repeating that as the problem even though I thought it was resolved. Following the second response from stack overflow I wondered if my bash profile was interfering and thats why it wasn't picking it up from the paths file itself. I edited the file using
+
+				p Having updated my path file in my bash_profile, running brew doctor now gave me the following
+
+				p However installing libfreenect still fails on the autogen command. I found an explanation of the deprecation issue of the automake package but not how I could resolve it during my install of libfreenect. At least I knew I was barking up the right tree. I'd pretty much run out of ideas by this point. My background brain process was reduced to a murmured repetition of the following I hate you I hate you I hate you and I was struggling to find the will to carry on.
+
+				p 
+					|Having considered there might be an issue with a conflict in my automake or autoconf files I decided to completely remove Homebrew. 
+					|<a href="http://superuser.com/questions/203707/how-to-uninstall-homebrew-mac-os-x-package-manager" target="_blank">Uninstalling Homebrew is pretty unpleasant</a>
+					|, you have to remove all the symlinks and directories manually. I found a script in the bottom of that page but running it closed my terminal window repeatedly so I did it by hand in the end. 
+
+				p I changed tack and decided to try a different set of installation instructions. I had to reinstall Macports, so I could install the libtool and libusb libraries again. I discovered I was still getting an error when running autogen 
+
+				p 
+					|I decided to try and find 
+					|<a href="https://trac.macports.org/wiki/howto/InstallingOlderPort" target="_blank">an earlier version</a> 
+					| of automake in Macports:
+
+				p "To install an older version of the port, you'll have to manually download the files from the repository. Browse the repository to find the directory of the port you want, then use the Revision Log link in the upper right to find the older version that you want to install."
+
+				p This was pretty painful in itself. I had to find the revision, download a raw text file, move the textfile to somewhere in my file system that I could change its permissions, change the permissions of the file so Macports was the owner and then run the install command to install it.
+
+				p Whilst I understand people think Homebrew is simpler, in the end I don't think I had control over the Homebrew formula which was automatically installing the latest version of automake as a dependancy of libfreenect. With Macports I had the choice of installing my own package version. It was kind of dirty and unpleasant but at least it did the job, somewhat like that late night kebab that you regret eating but are glad of having all the same.
+
+				p 
+					|I had a couple more stumbling blocks, the instructions I was following and those on the 
+					|<a href="https://github.com/OpenKinect/libfreenect/issues/6" target="_blank">openKinect github wiki</a> 
+					| both referred to a missing c directory. In the end I just created our  build directory in the root of the libfreenect and everything ran smoothly. I say smoothly. This whole process took at least 4 hours and about 5 years off my life. It's the least fun I've had in several months. I wouldn't want to repeat it any time soon and to add insult to injury when I try to run my original Zigfu projects they have stopped working. The 
+					|<a href="http://zigfu.com/" target="_blank">Zigfu library</a> 
+					|is reporting my sensorConnected property as false even though the glview application is running and libfreenect is definitely getting data back from the Kinect. 
+
+				p Deep sigh. 
+
 				p.sub 
 					|This article was originally published on the 
 					a(href='http://www.headlondon.com' target="_blank") Head London 
