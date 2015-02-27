@@ -742,6 +742,7 @@ sub {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_homepage\.scss}line{font-family:\0000393}}
 .homepage .subnav {
   margin-top: -40px;
+  margin-bottom: 20px;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_homepage\.scss}line{font-family:\0000398}}
@@ -1004,7 +1005,7 @@ sub {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_articles\.scss}line{font-family:\0000348}}
 .article-item p {
-  margin-bottom: 0;
+  margin: 0;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mairead\/Documents\/emdeebeebee\.com\/emdeebeebee\/stylesheets\/sass\/partials\/_articles\.scss}line{font-family:\0000352}}
